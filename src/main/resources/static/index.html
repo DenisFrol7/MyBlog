@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My blog</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+  <header class="d-flex justify-content-center py-3">
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+      <div class="dropdown">
+        <li class="nav-item"><a href="#" class="nav-link">Развлечения</a>
+          <div class="dropdown-content">
+            <a href="#">Игры</a>
+            <a href="#">Фильмы</a>
+            <a href="#">Сериалы</a>
+            <a href="#">Книги</a>
+            <a href="#">Аниме</a>
+          </div>
+        </li>
+      </div>
+      <li class="nav-item"><a href="#" class="nav-link">Расписание</a></li>
+      <li class="nav-item"><a href="activity.html" class="nav-link">Активность</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+    </ul>
+  </header>
+</div>
+  <div class="container">
+    <div class="row">
+      <div style="background: #bebebf" class="col">
+        <div class="d-flex justify-content-center fs-4">Первый раздел</div>
+        <div class="promotion__timer">
+          <div class="title d-flex justify-content-center fs-5">До конца подписки осталось:</div>
+          <div class="timer fs-5" style="text-align: center">
+              <span id="days">12</span>
+              дней
+              <span id="hours">20</span>
+              часов
+              <span id="minutes">56</span>
+              минут
+              <span id="seconds">20</span>
+              секунд
+          </div>
+        </div>
+      </div>
+      <div style="background: #cff4fc" class="col">
+        <div class="d-flex justify-content-center fs-4">Второй раздел</div>
+        <div class="d-flex justify-content-center fs-5">Текущая неделя (6 - 12)</div>
+        <div>
+          <ul>
+            <li>6 февраля</li>
+            <li>7 февраля</li>
+            <li>8 февраля</li>
+            <li>9 февраля</li>
+            <li>10 февраля</li>
+            <li>11 февраля</li>
+            <li>12 февраля</li>
+          </ul>
+        </div>
+      </div>
+      <div style="background: aquamarine" class="col">
+        <div class="d-flex justify-content-center fs-4">Моя активность</div>
+        <div class="d-flex justify-content-center fs-5">Февраль (6 - 12)</div>
+        <ul class="activity"></ul>
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
