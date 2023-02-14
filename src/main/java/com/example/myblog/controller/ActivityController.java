@@ -23,4 +23,9 @@ public class ActivityController {
         activityService.save(activity);
         return ResponseEntity.ok(HttpStatus.OK);
     }
+    @DeleteMapping("{id}")
+    public ResponseEntity<HttpStatus> delete(@PathVariable("id") Activity activity) {
+        activityService.delete(activity);
+        return ResponseEntity.ok(HttpStatus.OK);
+    }
 }

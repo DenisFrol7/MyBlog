@@ -1,10 +1,62 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Activity</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-
+    <div class="container">
+        <header class="d-flex justify-content-center py-3">
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Развлечения</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Расписание</a></li>
+                <li class="nav-item"><a href="activity.html" class="nav-link active">Активность</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            </ul>
+        </header>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-4" style="background: bisque">
+                <h3 class="d-flex justify-content-center">Форма для ввода активности</h3>
+                <form>
+                    <div class="row mb-3">
+                        <label for="inputDate" class="col-sm-3 col-form-label">Дата</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="inputDate" placeholder="dd-mm-yyyy" name="day">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputStep" class="col-sm-3 col-form-label">Количество шагов</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="inputStep" name="numberOfSteps">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+            </div>
+            <div class="col-4" style="background: palegreen">
+                <h3 class="d-flex justify-content-center">Текущая неделя</h3>
+                <ul>
+                    <li>Понедельник</li>
+                    <li>Вторник</li>
+                    <li>Среда</li>
+                    <li>Четверг</li>
+                    <li>Пятница</li>
+                    <li>Суббота</li>
+                    <li>Воскресение</li>
+                </ul>
+            </div>
+            <div class="col-4" style="background: paleturquoise">
+                <h3 class="d-flex justify-content-center">Итоги недели</h3>
+            </div>
+        </div>
+    </div>
+    <script src="js/formActivity.js"></script>
 </body>
 </html>

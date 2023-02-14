@@ -79,15 +79,12 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const date = new Date();
-    const startActivity = new Date(2022,0,16);
-    function getWeekDay(date) {
-        let days = ['Воскресение', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
-        return days[date.getDay()];
-    }
-
-    //console.log(getWeekDay(date));
-
+    // const date = new Date();
+    // const startActivity = new Date(2022,0,16);
+    // function getWeekDay(date) {
+    //     let days = ['Воскресение', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+    //     return days[date.getDay()];
+    // }
     function toMonth(number) {
         switch (number) {
             case 0: return "января";
@@ -107,26 +104,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const getResource = async (url) => {
         const res = await fetch(url);
-
         if (!res.ok) {
             throw new Error(`Could not fetch ${url}, status: ${res.status}`);
         }
-
         return await res.json();
     };
 
     getResource('http://localhost:8080/activity')
         .then(data => {
             data.forEach(({day, numberOfSteps}) => {
-                const date = new Date(day);
+                const str = day.split('-');
+                const temp = str[2] + '-' + str[1] + '-' + str[0];
+                const date = new Date(temp); // 15-12-2020  2020-12-15
                 const month = toMonth(date.getMonth());
                 const dayOfWeek = date.getDate();
-                console.log(getWeekDay(date));
+                //console.log(getWeekDay(date));
                 new Activity(dayOfWeek, month, numberOfSteps, '.activity').render();
             });
         });
-
-    // fetch('http://localhost:8080/activity')
-    //     .then(response => response.json())
-    //     .then(json => console.log(json));
 });
