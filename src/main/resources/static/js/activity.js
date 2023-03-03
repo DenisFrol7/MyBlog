@@ -36,8 +36,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Activity
     const week = document.querySelector('.current_week'),
-          prev = document.querySelector('.prev'),
           dayWeek = document.querySelector('.day_week'),
+          allStep = document.querySelector('.space'),
+          prev = document.querySelector('.prev'),
           next = document.querySelector('.next');
 
 
@@ -66,6 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     const db = [];
+    let currentWeekNumber = -2;
 
     getResource('http://localhost:8080/activity')
         .then(data => {
@@ -84,7 +86,7 @@ window.addEventListener('DOMContentLoaded', () => {
             return weekArr;
         })
         .then(weekArr => {
-            let currentWeekNumber = weekArr.length - 1;
+            currentWeekNumber = weekArr.length - 1;
 
             currentWeek(weekArr[currentWeekNumber]);
             showCurrentActivity(weekArr[currentWeekNumber]);
@@ -128,17 +130,28 @@ window.addEventListener('DOMContentLoaded', () => {
         const dayStart = convertDate(array[0].date).getDate();
         const dayEnd = convertDate(array[array.length-1].date).getDate();
         const month = toMonth(convertDate(array[array.length-1].date).getMonth());
-        curWeek.innerHTML = `${dayStart} - ${dayEnd} ${month}`;
+        curWeek.innerHTML = `${currentWeekNumber+1} неделя (${dayStart} - ${dayEnd} ${month})`;
         curWeek.classList.add('mark_remove');
         week.prepend(curWeek);
     }
     function showCurrentActivity(arr) {
+        let all = 0;
         for (let i = 0; i < arr.length; i++) {
             const date = convertDate(arr[i].date);
             const day = date.getDate();
             const month = toMonth(date.getMonth());
             const dayW = getWeekDay(date);
+            all += arr[i].steps;
             new Activity(day, dayW, month, arr[i].steps, '.day_week').render();
+        }
+        const allSteps = document.createElement('span');
+        allSteps.innerHTML = `Всего шагов за неделю: ${all}`;
+        allSteps.classList.add('mark_remove');
+        allStep.append(allSteps);
+        if (all > 20000) {
+            allStep.insertAdjacentHTML('beforeend', '<img class="rounded float-end mark_remove" src="../img/smile.png" alt="smile">');
+        } else {
+            allStep.insertAdjacentHTML('beforeend', '<img class="rounded float-end mark_remove" src="../img/bad.png" alt="bad">');
         }
     }
     function toMonth(number) {
