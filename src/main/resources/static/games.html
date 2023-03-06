@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game</title>
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container header_background">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="games.html" class="nav-link active">Игры</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Расписание</a></li>
+        <li class="nav-item"><a href="activity.html" class="nav-link">Активность</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+      </ul>
+    </header>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-1" style="background: bisque"></div>
+      <div class="col-8" style="background: white">
+        <h2 style="text-align: center">Коллекция игр</h2>
+          <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+              <form class="d-flex flex-grow-1" role="search">
+                <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+                <button class="btn btn-outline-success" type="submit">Поиск</button>
+              </form>
+            </div>
+          </nav>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Название</th>
+                <th>Жанр</th>
+                <th>Платформа</th>
+                <th>Библиотека</th>
+                <th>Статус</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider" style="border-top-color: red">
+              <tr>
+                <td>Battlefield 3</td>
+                <td>Shooter</td>
+                <td>PC,Xbox 360</td>
+                <td>EA,Xbox</td>
+                <td class="table-success">Пройдена</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <div class="col-3" style="background: palegreen">
+        <h2 style="text-align: center">Статистика</h2>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
