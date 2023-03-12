@@ -28,10 +28,10 @@ public class Game {
     private Integer gameScore;
     private Integer gameScoreCount;
 
-    public int progress() {
-        if (achievementsCount != null) {
-            double d = (double) achievementsUnlock / achievementsCount;
-            return (int) (d * 100);
-        } else return 0;
-    }
+//    public int progress() {
+//        if (achievementsCount != null) {
+//            double d = (double) achievementsUnlock / achievementsCount;
+//            return (int) (d * 100);
+//        } else return 0;
+//    }
 }
